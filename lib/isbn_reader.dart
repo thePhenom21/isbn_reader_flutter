@@ -10,7 +10,7 @@ class ISBNReader {
     FormData formData = FormData.fromMap(
         {"file": await MultipartFile.fromFile(path.path, filename: filename)});
     return Dio()
-        .post("https://oyster-app-fnjki.ondigitalocean.app/upload",
+        .post(endpoint,
             data: formData)
         .then((value) => value.data);
   }
